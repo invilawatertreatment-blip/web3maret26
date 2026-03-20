@@ -1051,6 +1051,22 @@
     }
   
 
+    .calculator-scroll {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 6px;
+    }
+    .calculator-scroll::-webkit-scrollbar {
+      height: 8px;
+    }
+    .calculator-scroll::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 999px;
+    }
+    .calculator-inner {
+      width: 100%;
+    }
     .calculator-wrap {
       background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
       border: 1px solid #dbe8f3;
@@ -1239,6 +1255,50 @@
         align-items: flex-start;
       }
       .calculator-body { padding: 20px 18px 18px; }
+      .calculator-inner {
+        min-width: 760px;
+      }
+      #efficiency-calculator .calculator-inputs {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+      #efficiency-calculator .calculator-summary {
+        grid-template-columns: 1fr 1fr;
+      }
+      #efficiency-calculator .calculator-chart-box {
+        height: 320px;
+      }
+      #efficiency-calculator .calculator-table-wrap {
+        overflow-x: visible;
+      }
+      #efficiency-calculator .calculator-table {
+        min-width: 100%;
+        display: table;
+      }
+      #efficiency-calculator .calculator-table thead {
+        display: table-header-group;
+      }
+      #efficiency-calculator .calculator-table tbody {
+        display: table-row-group;
+      }
+      #efficiency-calculator .calculator-table tr {
+        display: table-row;
+        border: 0;
+        background: transparent;
+      }
+      #efficiency-calculator .calculator-table td {
+        display: table-cell;
+        text-align: right !important;
+        font-size: 12px;
+        padding: 12px 10px;
+        white-space: nowrap;
+      }
+      #efficiency-calculator .calculator-table td::before {
+        content: none;
+        display: none;
+      }
+      #efficiency-calculator .calculator-table tr td + td {
+        border-top: 0;
+      }
     }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -1458,7 +1518,9 @@
         <p>Lokasi ini paling tepat karena pengunjung sudah memahami perbedaan Capex tradisional vs No CAPEX – Pay per m³, lalu bisa langsung mempersonalisasi simulasi saving sebelum masuk ke proof project dan portfolio.</p>
       </div>
 
-      <div class="calculator-wrap">
+      <div class="calculator-scroll">
+        <div class="calculator-inner">
+          <div class="calculator-wrap">
         <div class="calculator-top">
           <div>
             <span class="calculator-kicker">Analisis Efisiensi Biaya Air</span>
@@ -1523,6 +1585,7 @@
           <div style="text-align:center;">
             <a class="btn primary" style="min-height:58px; padding:0 28px;" href="#final-cta">Lihat Opsi Diskusi Lanjut</a>
           </div>
+        </div>
         </div>
       </div>
 
