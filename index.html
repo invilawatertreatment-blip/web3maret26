@@ -272,6 +272,14 @@
       font-weight: 700;
       filter: grayscale(1);
     }
+    .logo-pill img {
+      max-width: 100%;
+      max-height: 34px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
 
     .grid-2 {
       display: grid;
@@ -580,7 +588,199 @@
         text-align: center;
       }
     }
+  
+
+    .calculator-wrap {
+      background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+      border: 1px solid #dbe8f3;
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .calculator-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 24px 26px;
+      border-bottom: 1px solid #e8eff6;
+      background: linear-gradient(180deg, #fbfdff 0%, #f6fafe 100%);
+    }
+    .calculator-kicker {
+      display: inline-flex;
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--brand);
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .calculator-badge {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(11, 92, 171, 0.08);
+      border: 1px solid rgba(11, 92, 171, 0.12);
+      color: var(--brand);
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-weight: 800;
+      text-align: center;
+    }
+    .calculator-body {
+      padding: 24px 26px 26px;
+      display: grid;
+      gap: 22px;
+    }
+    .calculator-inputs {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .calculator-field label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #64748b;
+      font-weight: 800;
+    }
+    .calculator-field input {
+      width: 100%;
+      min-height: 58px;
+      border-radius: 18px;
+      border: 2px solid #d9e6f2;
+      background: #fff;
+      padding: 0 18px;
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--ink);
+      outline: none;
+      box-shadow: inset 0 2px 10px rgba(15, 23, 42, 0.04);
+    }
+    .calculator-field input:focus { border-color: var(--brand); }
+    .calculator-field.highlight input {
+      background: #eff6ff;
+      border-color: #bfdbfe;
+      color: var(--brand);
+    }
+    .calculator-summary {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .summary-box {
+      padding: 24px;
+      border-radius: 24px;
+      color: #fff;
+      box-shadow: var(--shadow);
+      border-bottom: 8px solid rgba(15, 23, 42, 0.28);
+    }
+    .summary-box p {
+      color: rgba(255,255,255,.82);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .summary-box strong {
+      display: block;
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.04;
+      letter-spacing: -0.04em;
+      font-weight: 900;
+      color: #fff;
+    }
+    .summary-box.saving {
+      background: linear-gradient(135deg, #059669 0%, #064e3b 100%);
+    }
+    .summary-box.asset {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    }
+    .summary-box.asset p,
+    .summary-box.asset strong {
+      color: #fbbf24;
+    }
+    .calculator-chart-card,
+    .calculator-table-card {
+      background: #fff;
+      border: 1px solid #e2ebf3;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+    .calculator-chart-card h3,
+    .calculator-table-card h3 {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      margin-bottom: 16px;
+      color: var(--ink);
+    }
+    .calculator-chart-box {
+      position: relative;
+      height: 320px;
+      width: 100%;
+    }
+    .calculator-table-wrap {
+      overflow-x: auto;
+    }
+    .calculator-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+    }
+    .calculator-table th {
+      background: #f8fafc;
+      padding: 14px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: #64748b;
+      text-align: right;
+      border-bottom: 2px solid #eef4f8;
+      white-space: nowrap;
+    }
+    .calculator-table th:first-child,
+    .calculator-table td:first-child {
+      text-align: left;
+    }
+    .calculator-table td {
+      padding: 14px;
+      border-bottom: 1px solid #f1f5f9;
+      text-align: right;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+    .calculator-table .saving-cell {
+      background: #ecfdf5;
+      color: #059669;
+      font-weight: 800;
+    }
+    .calculator-note {
+      font-size: 14px;
+      color: var(--muted);
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 1080px) {
+      .calculator-inputs,
+      .calculator-summary { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 720px) {
+      .calculator-top {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .calculator-body { padding: 20px 18px 18px; }
+    }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <a class="sticky-wa" href="#final-cta">Analisa Project via WhatsApp</a>
@@ -637,15 +837,15 @@
         <p>Preview logo strip klien di area atas LP</p>
       </div>
       <div class="logo-grid">
-        <div class="logo-pill">Cemerlang Samudra Kontrindo</div>
-        <div class="logo-pill">Kievit</div>
-        <div class="logo-pill">KIW</div>
-        <div class="logo-pill">Patria Maritim Perkasa</div>
-        <div class="logo-pill">Petrokimia Gresik</div>
-        <div class="logo-pill">Tirta Asasta Depok</div>
-        <div class="logo-pill">Tirtanadi</div>
-        <div class="logo-pill">United Tractors</div>
-        <div class="logo-pill">WIKA</div>
+        <div class="logo-pill"><img src="cemerlang-samudra-kontrindo.png" alt="Cemerlang Samudra Kontrindo" /></div>
+        <div class="logo-pill"><img src="kievit.png" alt="Kievit" /></div>
+        <div class="logo-pill"><img src="kiw.png" alt="KIW" /></div>
+        <div class="logo-pill"><img src="patria-maritim-perkasa.png" alt="Patria Maritim Perkasa" /></div>
+        <div class="logo-pill"><img src="petrokimia-gresik.png" alt="Petrokimia Gresik" /></div>
+        <div class="logo-pill"><img src="tirta-asasta-depok.png" alt="Tirta Asasta Depok" /></div>
+        <div class="logo-pill"><img src="tirtanadi.png" alt="Tirtanadi" /></div>
+        <div class="logo-pill"><img src="united-tractors.png" alt="United Tractors" /></div>
+        <div class="logo-pill"><img src="wika.png" alt="WIKA" /></div>
       </div>
     </div>
   </section>
@@ -784,6 +984,86 @@
     </div>
   </section>
 
+  <section class="section" id="efficiency-calculator">
+    <div class="container">
+      <div class="section-head center">
+        <span class="section-label">Kalkulator efisiensi online</span>
+        <h2>Hitung Potensi Efisiensi Biaya Air Secara Langsung</h2>
+        <p>Lokasi ini paling tepat karena pengunjung sudah memahami perbedaan Capex tradisional vs No CAPEX – Pay per m³, lalu bisa langsung mempersonalisasi simulasi saving sebelum masuk ke proof project dan portfolio.</p>
+      </div>
+
+      <div class="calculator-wrap">
+        <div class="calculator-top">
+          <div>
+            <span class="calculator-kicker">Analisis Efisiensi Biaya Air</span>
+            <h3 style="margin-bottom:6px;">Skema Zero CAPEX: PDAM vs Invila™ WaaS</h3>
+            <p style="margin:0;">Gunakan simulasi ini untuk memproyeksikan saving 5 tahun dan nilai aset yang tidak perlu dibeli di awal.</p>
+          </div>
+          <div class="calculator-badge">Adjust Harga Invila: 2% / Tahun</div>
+        </div>
+
+        <div class="calculator-body">
+          <div class="calculator-inputs">
+            <div class="calculator-field">
+              <label for="vol_total">Kapasitas (m³/hari)</label>
+              <input type="number" id="vol_total" value="2000" oninput="updateDashboard()" />
+            </div>
+            <div class="calculator-field">
+              <label for="pdam_price">Tarif PDAM (Rp/m³)</label>
+              <input type="number" id="pdam_price" value="14600" oninput="updateDashboard()" />
+            </div>
+            <div class="calculator-field highlight">
+              <label for="invila_price">Tarif Dasar Invila (Rp/m³)</label>
+              <input type="number" id="invila_price" value="6900" oninput="updateDashboard()" />
+            </div>
+          </div>
+
+          <div class="calculator-summary">
+            <div class="summary-box saving">
+              <p>Total Saving (5 Tahun)</p>
+              <strong id="five_year_saving">Rp 0</strong>
+            </div>
+            <div class="summary-box asset">
+              <p>Aset Gratis dari Invila™</p>
+              <strong id="asset_value">Rp 0</strong>
+            </div>
+          </div>
+
+          <div class="calculator-chart-card">
+            <h3>Visualisasi Akumulasi Biaya Operasional (Tahun 1–5)</h3>
+            <div class="calculator-chart-box">
+              <canvas id="costChart"></canvas>
+            </div>
+          </div>
+
+          <div class="calculator-table-card">
+            <h3>Ringkasan Per Tahun</h3>
+            <div class="calculator-table-wrap">
+              <table class="calculator-table">
+                <thead>
+                  <tr>
+                    <th>Tahun</th>
+                    <th>Tarif Invila (Adj 2%)</th>
+                    <th>Biaya PDAM (Accum)</th>
+                    <th>Biaya Invila (Accum)</th>
+                    <th>Net Saving</th>
+                  </tr>
+                </thead>
+                <tbody id="table_body"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div style="text-align:center;">
+            <button type="button" class="btn primary" style="min-height:58px; padding:0 28px;" onclick="kirimWA()">Konsultasi SPAM via WhatsApp</button>
+          </div>
+        </div>
+      </div>
+
+      <p class="calculator-note" style="margin-top:18px;">Output ini bersifat simulasi awal untuk membantu percakapan. Untuk assessment yang lebih akurat, lanjutkan ke WhatsApp agar tim Invila TM meninjau kebutuhan site, lokasi, dan kebutuhan m³/hari Anda.</p>
+    </div>
+  </section>
+
   <section class="section value-band">
     <div class="container">
       <div class="section-head center">
@@ -911,15 +1191,15 @@
           <span class="section-label">Logo-logo Klien</span>
         </div>
         <div class="logo-grid">
-          <div class="logo-pill">Cemerlang Samudra Kontrindo</div>
-          <div class="logo-pill">Kievit</div>
-          <div class="logo-pill">KIW</div>
-          <div class="logo-pill">Patria Maritim Perkasa</div>
-          <div class="logo-pill">Petrokimia Gresik</div>
-          <div class="logo-pill">Tirta Asasta Depok</div>
-          <div class="logo-pill">Tirtanadi</div>
-          <div class="logo-pill">United Tractors</div>
-          <div class="logo-pill">WIKA</div>
+          <div class="logo-pill"><img src="cemerlang-samudra-kontrindo.png" alt="Cemerlang Samudra Kontrindo" /></div>
+          <div class="logo-pill"><img src="kievit.png" alt="Kievit" /></div>
+          <div class="logo-pill"><img src="kiw.png" alt="KIW" /></div>
+          <div class="logo-pill"><img src="patria-maritim-perkasa.png" alt="Patria Maritim Perkasa" /></div>
+          <div class="logo-pill"><img src="petrokimia-gresik.png" alt="Petrokimia Gresik" /></div>
+          <div class="logo-pill"><img src="tirta-asasta-depok.png" alt="Tirta Asasta Depok" /></div>
+          <div class="logo-pill"><img src="tirtanadi.png" alt="Tirtanadi" /></div>
+          <div class="logo-pill"><img src="united-tractors.png" alt="United Tractors" /></div>
+          <div class="logo-pill"><img src="wika.png" alt="WIKA" /></div>
         </div>
       </div>
       <div class="footer-box identity">
@@ -929,5 +1209,138 @@
       </div>
     </div>
   </footer>
+  <script>
+    let myChart;
+
+    function updateDashboard() {
+      const vol = parseFloat(document.getElementById('vol_total')?.value) || 0;
+      const pdamTariff = parseFloat(document.getElementById('pdam_price')?.value) || 0;
+      const invilaBaseTariff = parseFloat(document.getElementById('invila_price')?.value) || 0;
+      const fmt = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 });
+
+      const lps = vol / 86.4;
+      const assetValue = lps * 350000000;
+      const assetValueEl = document.getElementById('asset_value');
+      if (assetValueEl) {
+        assetValueEl.innerText = fmt.format(assetValue).replace('Rp', 'Rp ');
+      }
+
+      let chartLabels = [];
+      let chartDataPdam = [];
+      let chartDataInvila = [];
+      let tableHtml = '';
+
+      let currentInvilaTariff = invilaBaseTariff;
+      let currentPdamTariff = pdamTariff;
+      let cumulativeSaving = 0;
+      let currentPdamAccum = 0;
+      let currentInvilaAccum = 0;
+
+      for (let i = 1; i <= 5; i++) {
+        chartLabels.push('Thn ' + i);
+
+        const yearlyPdam = currentPdamTariff * vol * 30 * 12;
+        const yearlyInvila = currentInvilaTariff * vol * 30 * 12;
+
+        currentPdamAccum += yearlyPdam;
+        currentInvilaAccum += yearlyInvila;
+        cumulativeSaving += (yearlyPdam - yearlyInvila);
+
+        chartDataPdam.push(currentPdamAccum);
+        chartDataInvila.push(currentInvilaAccum);
+
+        tableHtml += `
+          <tr>
+            <td style="font-weight:800;">Tahun ${i}</td>
+            <td style="font-style:italic; font-weight:700; color:#0b5cab;">Rp ${Math.round(currentInvilaTariff).toLocaleString('id-ID')}</td>
+            <td>${fmt.format(currentPdamAccum)}</td>
+            <td>${fmt.format(currentInvilaAccum)}</td>
+            <td class="saving-cell">${fmt.format(cumulativeSaving)}</td>
+          </tr>
+        `;
+
+        currentInvilaTariff *= 1.02;
+      }
+
+      const savingEl = document.getElementById('five_year_saving');
+      const tableEl = document.getElementById('table_body');
+      if (savingEl) savingEl.innerText = fmt.format(cumulativeSaving).replace('Rp', 'Rp ');
+      if (tableEl) tableEl.innerHTML = tableHtml;
+
+      renderChart(chartLabels, chartDataPdam, chartDataInvila);
+    }
+
+    function renderChart(labels, dataPdam, dataInvila) {
+      const canvas = document.getElementById('costChart');
+      if (!canvas || typeof Chart === 'undefined') return;
+      const ctx = canvas.getContext('2d');
+
+      if (myChart) {
+        myChart.destroy();
+      }
+
+      myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              label: 'Akumulasi Biaya PDAM',
+              data: dataPdam,
+              borderColor: '#0f172a',
+              borderWidth: 4,
+              pointBackgroundColor: '#fff',
+              pointBorderColor: '#0f172a',
+              pointRadius: 5,
+              fill: false,
+              tension: 0.15
+            },
+            {
+              label: 'Akumulasi Biaya Invila (WaaS)',
+              data: dataInvila,
+              borderColor: '#10b981',
+              borderWidth: 4,
+              pointBackgroundColor: '#fff',
+              pointBorderColor: '#10b981',
+              pointRadius: 5,
+              backgroundColor: 'rgba(16, 185, 129, 0.1)',
+              fill: true,
+              tension: 0.15
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: { font: { weight: 'bold', size: 11 } }
+            }
+          },
+          scales: {
+            y: {
+              ticks: {
+                callback: v => 'Rp ' + (v / 1000000000).toFixed(1) + ' M'
+              },
+              grid: { color: '#f1f5f9' }
+            },
+            x: { grid: { display: false } }
+          }
+        }
+      });
+    }
+
+    function kirimWA() {
+      const vol = document.getElementById('vol_total')?.value || '';
+      const saving = document.getElementById('five_year_saving')?.innerText || '';
+      const msg = `Halo Pak Irfon, saya ingin konsultasi sistem SPAM.
+
+Simulasi saya menghasilkan potensi NET SAVING sebesar ${saving} dalam 5 tahun dengan kapasitas ${vol} m³/hari. Mohon atur waktu untuk diskusi teknis.`;
+      window.open(`https://wa.me/6285219493322?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+
+    window.addEventListener('load', updateDashboard);
+  </script>
 </body>
 </html>
